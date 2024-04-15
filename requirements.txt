@@ -1,0 +1,3 @@
+Pour éxécuter ce code il est nécessaire de disposer des packages :
+- matplotlib
+- tkinter
