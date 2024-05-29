@@ -1,6 +1,0 @@
-Pour que le programme fonctionne vous devez avoir installer les librairies suivantes : 
-
-1) rospy 
-2) geometry_msgs
-3) tkinder
-4) matplotlib
