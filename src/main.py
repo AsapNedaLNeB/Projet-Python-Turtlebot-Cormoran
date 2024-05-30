@@ -2,6 +2,7 @@ import tkinter as tk
 from connection_frame import ConnectionFrame
 from movement_frame import MovementFrame
 from command_frame import CommandFrame
+from robot_controler import RobotController
 
 class RobotApp(tk.Tk):
     def __init__(self):

@@ -1,14 +1,7 @@
-# coding : utf-8  
+import rospy
+from robot_controler import TurtleBotController
 
-from tkinter import *
-
-fenetre = Tk()
-
-label = Label(fenetre, text="Hello World")
-label.pack()
-
-# bouton de sortie
-button = Button(fenetre, text="Fermer", command=fenetre.quit)
-button.pack()
-
-fenetre.mainloop()
+if __name__ == "__main__":
+    rospy.init_node('turtlebot_gui')
+    controller= TurtleBotController()
+    controller.run()
