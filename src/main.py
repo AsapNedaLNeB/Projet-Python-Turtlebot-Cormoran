@@ -9,13 +9,15 @@ class RobotApp(tk.Tk):
         super().__init__()
         self.title("TurtleBot Controller")
         
-        self.connection_frame = ConnectionFrame(self)
+        self.robot_controller = RobotController()
+        
+        self.connection_frame = ConnectionFrame(self, self.robot_controller)
         self.connection_frame.pack(side=tk.TOP, fill=tk.X)
 
-        self.movement_frame = MovementFrame(self)
+        self.movement_frame = MovementFrame(self, self.robot_controller)
         self.movement_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
-        self.command_frame = CommandFrame(self)
+        self.command_frame = CommandFrame(self, self.robot_controller)
         self.command_frame.pack(side=tk.RIGHT, fill=tk.Y)
 
 if __name__ == "__main__":

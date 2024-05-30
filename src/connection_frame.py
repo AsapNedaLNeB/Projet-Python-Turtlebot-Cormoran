@@ -2,8 +2,10 @@ import tkinter as tk
 from tkinter import messagebox
 
 class ConnectionFrame(tk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, robot_controller):
         super().__init__(parent)
+
+        self.robot_controller = robot_controller
         
         self.master_uri_label = tk.Label(self, text="ROS Master URI:")
         self.master_uri_label.pack(side=tk.LEFT)

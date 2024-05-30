@@ -1,45 +1,46 @@
 import tkinter as tk
 
 class CommandFrame(tk.Frame):
-    def __init__(self, parent):
+    def __init__(self, parent, robot_controller):
         super().__init__(parent)
+        self.robot_controller = robot_controller
         
-        self.avance_button = tk.Button(self, text="avance", command=self.move_avance)
-        self.avance_button.pack(fill=tk.X)
+        self.forward_button = tk.Button(self, text="Forward", command=self.move_forward)
+        self.forward_button.pack(fill=tk.X)
         
-        self.recule_button = tk.Button(self, text="recule", command=self.move_recule)
-        self.recule_button.pack(fill=tk.X)
+        self.backward_button = tk.Button(self, text="Backward", command=self.move_backward)
+        self.backward_button.pack(fill=tk.X)
         
-        self.gauche_button = tk.Button(self, text="gauche", command=self.move_gauche)
-        self.gauche_button.pack(fill=tk.X)
+        self.left_button = tk.Button(self, text="Left", command=self.move_left)
+        self.left_button.pack(fill=tk.X)
         
-        self.droite_button = tk.Button(self, text="droite", command=self.move_droite)
-        self.droite_button.pack(fill=tk.X)
+        self.right_button = tk.Button(self, text="Right", command=self.move_right)
+        self.right_button.pack(fill=tk.X)
         
-        self.vitesse_label = tk.Label(self, text="Vitesse Linéaire:")
-        self.vitesse_label.pack()
+        self.linear_speed_label = tk.Label(self, text="Linear Speed:")
+        self.linear_speed_label.pack()
         
-        self.vitesse_slider = tk.Scale(self, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL)
-        self.vitesse_slider.pack(fill=tk.X)
+        self.linear_speed_slider = tk.Scale(self, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL)
+        self.linear_speed_slider.pack(fill=tk.X)
         
-        self.vitesse_ang_label = tk.Label(self, text="Vitesse Angulaire:")
-        self.vitesse_ang_label.pack()
+        self.angular_speed_label = tk.Label(self, text="Angular Speed:")
+        self.angular_speed_label.pack()
         
-        self.vitesse_ang_slider = tk.Scale(self, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL)
-        self.vitesse_ang_slider.pack(fill=tk.X)
+        self.angular_speed_slider = tk.Scale(self, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL)
+        self.angular_speed_slider.pack(fill=tk.X)
         
-    def move_avance(self):
-        # Logic to move the robot avance
-        print("avance")
+    def move_forward(self):
+        linear_speed = self.linear_speed_slider.get()
+        self.robot_controller.send_velocity_command(linear_speed, 0)
         
-    def move_recule(self):
-        # Logic to move the robot recule
-        print("recule")
+    def move_backward(self):
+        linear_speed = -self.linear_speed_slider.get()
+        self.robot_controller.send_velocity_command(linear_speed, 0)
         
-    def move_gauche(self):
-        # Logic to turn the robot gauche
-        print("gauche")
+    def move_left(self):
+        angular_speed = self.angular_speed_slider.get()
+        self.robot_controller.send_velocity_command(0, angular_speed)
         
-    def move_droite(self):
-        # Logic to turn the robot droite
-        print("droite")
+    def move_right(self):
+        angular_speed = -self.angular_speed_slider.get()
+        self.robot_controller.send_velocity_command(0, angular_speed)
