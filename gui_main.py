@@ -9,6 +9,8 @@ fenetre_main = Tk()
 def alert():
     showinfo("alerte", "Bravo !")
 
+# bar des menus
+
 menubar = Menu(fenetre_main)
 
 menu1 = Menu(menubar, tearoff=0)
@@ -32,15 +34,53 @@ fenetre_main.config(menu=menubar)
 def recupere():
     showinfo("Alerte", entree.get())
 
-value = StringVar()
-value.set("Valeur")
-entree = Entry(fenetre_main, textvariable=value, width=30)
-entree.pack()
-
-bouton = Button(fenetre_main, text="Valider", command=recupere)
-bouton.pack()
 
 
+# définition des différentes frames et du layout:
+
+Frame1 = Frame(fenetre_main,borderwidth=2, relief=GROOVE,width=200, height=300).place(x=10,y=10)
+Frame2 = Frame(fenetre_main,borderwidth=2, relief=GROOVE,width=200, height=300).place(x=210,y=10)
+Frame3 = Frame(fenetre_main,borderwidth=2, relief=GROOVE,width=400, height=300).place(x=410,y=10)
+Frame4 = Frame(fenetre_main,borderwidth=2, relief=GROOVE,width=200, height=200).place(x=10,y=310)
+Frame5 = Frame(fenetre_main,borderwidth=2, relief=GROOVE,width=600, height=200).place(x=210,y=310)
+
+Label(Frame1, text="Infos Robot").place(x=60,y=20)
+Label(Frame2, text="Etat de la connexion").place(x=250,y=20)
+Label(Frame3, text="Visualisation").place(x=550,y=20)
+Label(Frame4, text="Commande").place(x=60,y=320)
+Label(Frame5, text="graphiques").place(x=500,y=320)
+
+# PARTIE COMMANDE :
+
+BoutonAvancer = Button(Frame4, text="⬆", borderwidth=1, relief=RAISED).place(in_=Frame4,x=60,y=400)
+BoutonReculer = Button(Frame4, text="⬇", borderwidth=1, relief=RAISED).place(in_=Frame4,x=60,y=450)
+BoutonRotationDroite = Button(Frame4, text="⟳", borderwidth=1, relief=RAISED).place(in_=Frame4,x=85,y=425)
+BoutonRotationGauche = Button(Frame4, text="⟲", borderwidth=1, relief=RAISED).place(in_=Frame4,x=30,y=425)
+
+BoutonStartStop = Button(Frame4, text="Start/Stop", borderwidth=1, relief=RAISED).place(in_=Frame4,x=40,y=350)
+
+# curseurs :
+
+valueSpeed = DoubleVar()
+valueAcceleration = DoubleVar()
+
+scaleSpeed = Scale(fenetre_main, variable=valueSpeed)
+scaleAcceleration = Scale(fenetre_main, variable=valueAcceleration)
+scaleSpeed.place(in_=Frame4, x=105, y=375)
+scaleAcceleration.place(in_=Frame4, x=145, y=375)
+
+Label(Frame4, text="Speed").place(in_=Frame4,x=115,y=355)
+Label(Frame4, text="Acc").place(in_=Frame4,x=165,y=355)
+
+
+
+# value = StringVar()
+# value.set("Valeur")
+# entree = Entry(Frame1, textvariable=value, width=30)
+# entree.grid(row=1,column=1)
+
+# bouton = Button(Frame1, text="Valider", command=recupere)
+# bouton.grid(row=1,column=1)
 
 
 
