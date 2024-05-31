@@ -23,13 +23,7 @@ Une application Python avec interface graphique pour contrôler un robot TurtleB
 
 ## Exécution
 
-1. Exécuter gazebo :
-    Dans le terminal, lancer :
-
-    -`$ export TURTLEBOT3_MODEL=burger`
-
-    -`$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch`
-3. Exécutez l'application: python main.py
+1. Exécutez l'application python : main.py
 
 ## Requirements
 Installation valide de ROS Melodic et de gazebo

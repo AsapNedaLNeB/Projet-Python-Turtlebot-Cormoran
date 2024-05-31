@@ -1,5 +1,5 @@
 import tkinter as tk
-from connection_frame import ConnectionFrame
+#from connection_frame import ConnectionFrame #utile uniquement pour le controle d'un robot
 from movement_frame import MovementFrame
 from command_frame import CommandFrame
 from robot_controller import TurtleBot3Controller
@@ -12,8 +12,8 @@ class RobotApp(tk.Tk):
         
         self.robot_controller = TurtleBot3Controller()
         
-        self.connection_frame = ConnectionFrame(self, self.robot_controller)
-        self.connection_frame.pack(side=tk.TOP, fill=tk.X)
+        #self.connection_frame = ConnectionFrame(self, self.robot_controller)
+        #self.connection_frame.pack(side=tk.TOP, fill=tk.X)
 
         self.movement_frame = MovementFrame(self, self.robot_controller)
         self.movement_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
