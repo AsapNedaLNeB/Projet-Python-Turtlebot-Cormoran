@@ -5,10 +5,10 @@ setup(
     version='0.1.0',
     packages=find_packages(),
     install_requires=[
-        'tkinter',
+        'tk',
         'matplotlib',
-        'rospy',
-        'geometry_msgs',
-        'nav_msgs',
+        #'rospy', à installer à la main dans le terminal
+        #'geometry_msgs',
+        #'nav_msgs',
     ],
 )

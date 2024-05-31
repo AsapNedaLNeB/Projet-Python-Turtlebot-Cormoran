@@ -4,7 +4,6 @@ from tkinter import messagebox
 class ConnectionFrame(tk.Frame):
     def __init__(self, parent, robot_controller):
         super().__init__(parent)
-
         self.robot_controller = robot_controller
         
         self.master_uri_label = tk.Label(self, text="ROS Master URI:")
@@ -29,15 +28,11 @@ class ConnectionFrame(tk.Frame):
         self.connection_status.pack(side=tk.LEFT)
         
     def start_connection(self):
-        master_uri = self.master_uri_entry.get()
-        hostname = self.hostname_entry.get()
-        # Logic to start connection to the robot
-        # For now, we just simulate a successful connection
+        # For simulation, assume connection is always successful
         self.connection_status.config(text="Connected", fg="green")
-        messagebox.showinfo("Connection", "Connected to the robot")
+        messagebox.showinfo("Connection", "Connected to the robot simulation")
         
     def stop_connection(self):
-        # Logic to stop connection to the robot
-        # For now, we just simulate a successful disconnection
+        # For simulation, assume disconnection is always successful
         self.connection_status.config(text="Disconnected", fg="red")
-        messagebox.showinfo("Connection", "Disconnected from the robot")
+        messagebox.showinfo("Connection", "Disconnected from the robot simulation")

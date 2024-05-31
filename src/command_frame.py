@@ -31,16 +31,16 @@ class CommandFrame(tk.Frame):
         
     def move_forward(self):
         linear_speed = self.linear_speed_slider.get()
-        self.robot_controller.send_velocity_command(linear_speed, 0)
+        self.robot_controller.move(linear_speed, 0, 1)
         
     def move_backward(self):
         linear_speed = -self.linear_speed_slider.get()
-        self.robot_controller.send_velocity_command(linear_speed, 0)
+        self.robot_controller.move(linear_speed, 0, 1)
         
     def move_left(self):
         angular_speed = self.angular_speed_slider.get()
-        self.robot_controller.send_velocity_command(0, angular_speed)
+        self.robot_controller.move(0, angular_speed, 1)
         
     def move_right(self):
         angular_speed = -self.angular_speed_slider.get()
-        self.robot_controller.send_velocity_command(0, angular_speed)
+        self.robot_controller.move(0, angular_speed, 1)

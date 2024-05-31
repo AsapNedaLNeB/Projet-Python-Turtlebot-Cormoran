@@ -13,8 +13,8 @@ class MovementFrame(tk.Frame):
         self.line_position, = self.ax[0].plot([], [], 'r-')
         self.line_velocity, = self.ax[1].plot([], [], 'b-')
         
-        self.ax[0].set_title("Position (x, y)")
-        self.ax[1].set_title("Vitesse (linear, angular)")
+        self.ax[0].set_title("Robot Position (x, y)")
+        self.ax[1].set_title("Robot Velocity (linear, angular)")
         
         self.ax[0].set_xlim(0, 10)
         self.ax[0].set_ylim(0, 10)

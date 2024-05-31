@@ -23,7 +23,27 @@ Une application Python avec interface graphique pour contrôler un robot TurtleB
 
 ## Exécution
 
+1. Exécuter gazebo :
+    Dans le terminal, lancer :
+
+    -`$ export TURTLEBOT3_MODEL=burger`
+
+    -`$ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch`
 3. Exécutez l'application: python main.py
 
 ## Requirements
-Voir `setup.py`.
+Installation valide de ROS Melodic et de gazebo
+Setup du dossier catkin_ws avec la simulation (voir lien 1)
+
+avoir executé dans le terminal (pour ubuntu):
+
+-`$ sudo apt-get install python-geometry-msgs`
+
+-`$ sudo apt-get install python-nav_msgs`
+
+-`$ sudo apt-get install ros-melodic-rospy`
+
+Voir `setup.py` pour les packages necessaires
+
+## Liens
+1) Pour setup gazebo avec ROS: https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/
