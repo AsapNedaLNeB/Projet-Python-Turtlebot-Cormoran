@@ -1,5 +1,0 @@
-tkinter
-matplotlib
-rospy
-geometry_msgs
-nav_msgs
