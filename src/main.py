@@ -2,7 +2,7 @@ import tkinter as tk
 from connection_frame import ConnectionFrame
 from movement_frame import MovementFrame
 from command_frame import CommandFrame
-from robot_controler import TurtleBot3Controller
+from robot_controller import TurtleBot3Controller
 from Gazebo_launch import launch_gazebo
 
 class RobotApp(tk.Tk):
@@ -24,10 +24,10 @@ class RobotApp(tk.Tk):
         self.bind_keys()
 
     def bind_keys(self):
-        self.bind('<z>', lambda event: self.robot_controller.move(0.2, 0.0, 1.0))
-        self.bind('<s>', lambda event: self.robot_controller.move(-0.2, 0.0, 1.0))
-        self.bind('<q>', lambda event: self.robot_controller.move(0.0, 0.5, 1.0))
-        self.bind('<d>', lambda event: self.robot_controller.move(0.0, -0.5, 1.0))
+        self.bind('<z>', lambda event: self.robot_controller.move(0.2, 0.0, 1))
+        self.bind('<s>', lambda event: self.robot_controller.move(-0.2, 0.0, 1))
+        self.bind('<q>', lambda event: self.robot_controller.move(0.0, 0.5, 1))
+        self.bind('<d>', lambda event: self.robot_controller.move(0.0, -0.5, 1))
         self.bind('<KeyRelease>', self.stop_robot)
 
     def stop_robot(self, event):

@@ -2,6 +2,9 @@ import tkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
 import matplotlib.animation as animation
+import numpy as np
+
+L=[[(0,0),(0,0)]]
 
 class MovementFrame(tk.Frame):
     def __init__(self, parent, robot_controller):
@@ -16,10 +19,10 @@ class MovementFrame(tk.Frame):
         self.ax[0].set_title("Robot Position (x, y)")
         self.ax[1].set_title("Robot Velocity (linear, angular)")
         
-        self.ax[0].set_xlim(0, 10)
-        self.ax[0].set_ylim(0, 10)
-        self.ax[1].set_xlim(0, 10)
-        self.ax[1].set_ylim(-1, 1)
+        self.ax[0].set_xlim(-10, 10)
+        self.ax[0].set_ylim(-10, 10)
+        self.ax[1].set_xlim(0, 1)
+        self.ax[1].set_ylim(-10, 10)
         
         self.canvas = FigureCanvasTkAgg(self.fig, master=self)
         self.canvas.draw()
@@ -31,6 +34,8 @@ class MovementFrame(tk.Frame):
         if self.robot_controller.current_pose:
             x = self.robot_controller.current_pose.position.x
             y = self.robot_controller.current_pose.position.y
-            self.line_position.set_data([0, x], [0, y])
-            # Add logic for velocity if available
+            L.append([(x,y),((x-L[len(L)-1][0][0])/10,(y-L[len(L)-1][0][1])/10)])
+            self.ax[1].set_xlim(0, len(L))
+            self.line_position.set_data([a[0][0] for a in L], [a[0][1] for a in L])
+            self.line_velocity.set_data([np.sqrt(a[1][0]**2+a[1][1]**2) for a in L],[t for t in range(len(L))])
         self.canvas.draw()

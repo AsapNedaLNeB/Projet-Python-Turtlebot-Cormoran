@@ -17,7 +17,7 @@ def launch_gazebo():
     time.sleep(5)
 
     # Launch Gazebo with TurtleBot3 world
-    gazebo_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_gazebo turtlebot3_world.launch'])
+    gazebo_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch'])
 
     # Launch teleop_keyboard (optional for manual control)
     teleop_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch'])
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
     try:
         while True:
-            time.sleep(10)
+            time.sleep(1)
     except KeyboardInterrupt:
         roscore_process.terminate()
         gazebo_process.terminate()
