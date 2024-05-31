@@ -14,7 +14,7 @@ def launch_gazebo():
     roscore_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roscore'])
     
     # Wait for roscore to start
-    time.sleep(5)
+    time.sleep(3)
 
     # Launch Gazebo with TurtleBot3 world
     gazebo_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch'])
