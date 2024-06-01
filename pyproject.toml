@@ -10,7 +10,7 @@ classifiers = ["Programming Language :: Python :: 3"]
 dependencies = ["tkinter","matplotlib"]
 
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
+requires = ["setuptools", "setuptools-scm", "tk","matplotlib","numpy"]
 build-backend = "setuptools.build_meta"
 
 [project.optional-dependencies]

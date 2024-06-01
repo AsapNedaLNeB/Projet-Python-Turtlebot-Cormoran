@@ -1,3 +1,5 @@
+#Gère la partie graph de l'interface graphique
+
 import tkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import matplotlib.pyplot as plt
@@ -30,7 +32,7 @@ class MovementFrame(tk.Frame):
         
         self.ani = animation.FuncAnimation(self.fig, self.update_graph, interval=500)
         
-    def update_graph(self,i) -> None: #grosses optimisations possibles mais pas prioritaires
+    def update_graph(self,i) -> None: #grosses optimisations possibles mais pas prioritaires (calculer à chaque fois une liste entière n'est pas très malin)
         if self.robot_controller.current_pose:
             x = self.robot_controller.current_pose.position.x
             y = self.robot_controller.current_pose.position.y

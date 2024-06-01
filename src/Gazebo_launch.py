@@ -1,25 +1,25 @@
+#lance gazebo automatiquement
+
 import subprocess
 import time
 import os
 
 def launch_gazebo():
-    # Source the ROS setup.bash files
     os.system("source /opt/ros/melodic/setup.bash")
-    os.system("source ~/catkin_ws/devel/setup.bash")  # Adjust if your catkin workspace is different
+    os.system("source ~/catkin_ws/devel/setup.bash")  # à modifier suivant l'emplacement du dosier catkin_ws
 
-    # Export necessary environment variables
-    os.environ['TURTLEBOT3_MODEL'] = 'burger'  # Adjust if using a different model
+    os.environ['TURTLEBOT3_MODEL'] = 'burger'  # défini le modèle de bot
 
-    # Launch roscore
+    # démarre roscore
     roscore_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roscore'])
     
-    # Wait for roscore to start
+    # Attends le démarrage de roscore pour démarrer la suite (besoin d'augmenter le sleep() si ordinateur trop lent)
     time.sleep(3)
 
-    # Launch Gazebo with TurtleBot3 world
+    # Lance Gazebo dans un monde vide
     gazebo_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch'])
 
-    # Launch teleop_keyboard (optional for manual control)
+    # Lance teleop pour le controle clavier
     teleop_process = subprocess.Popen(['gnome-terminal', '--', 'bash', '-c', 'roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch'])
 
     return roscore_process, gazebo_process, teleop_process

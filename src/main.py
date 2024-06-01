@@ -6,7 +6,7 @@ from Gazebo_launch import launch_gazebo
 
 class RobotApp(tk.Tk):
     def __init__(self):
-        super().__init__()
+        super().__init__() #initialisation des différents scripts
         self.title("TurtleBot Controller")
         
         self.robot_controller = TurtleBot3Controller()
@@ -19,7 +19,7 @@ class RobotApp(tk.Tk):
         
         self.bind_keys()
 
-    def bind_keys(self):
+    def bind_keys(self): #move(vitesse,vitesse angulaire,durée)
         self.bind('<z>', lambda event: self.robot_controller.move(0.2, 0.0, 1))
         self.bind('<s>', lambda event: self.robot_controller.move(-0.2, 0.0, 1))
         self.bind('<q>', lambda event: self.robot_controller.move(0.0, 0.5, 1))
