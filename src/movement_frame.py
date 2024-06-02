@@ -19,7 +19,7 @@ class MovementFrame(tk.Frame):
         self.line_velocity, = self.ax[1].plot([], [], 'b-')
         
         self.ax[0].set_title("Position (x, y)")
-        self.ax[1].set_title("Vitesse en m.s⁻1 et rad.s⁻1")
+        self.ax[1].set_title("Vitesse en m.s⁻1")
         
         self.ax[0].set_xlim(-10, 10)
         self.ax[0].set_ylim(-10, 10)
