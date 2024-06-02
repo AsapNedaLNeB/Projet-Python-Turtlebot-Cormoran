@@ -35,6 +35,7 @@ Contrôle du déplacement avec z,q,s,d ou les boutons du GUI (vitesse de déplac
 La fenêtre du GUI ne doit PAS être en arrière plan
 
 NB: De gros lags sont présents sur le GUI qui ont de gros impacts sur la simulation, source inconnue
+
 NB2 : sur certains PC les sliders et boutons ne fonctionnent pas : source inconnue 
 
 ## Requirements
