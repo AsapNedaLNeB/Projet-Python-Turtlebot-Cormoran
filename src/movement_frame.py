@@ -22,7 +22,7 @@ class MovementFrame(tk.Frame):
         
         # Configure les titres des sous-graphiques
         self.ax[0].set_title("Position (x, y)")
-        self.ax[1].set_title("Vitesse en m.s⁻1 et rad.s⁻1")
+        self.ax[1].set_title("Vitesse en m.s⁻1")
         
         # Configure les limites des axes
         self.ax[0].set_xlim(-10, 10)
