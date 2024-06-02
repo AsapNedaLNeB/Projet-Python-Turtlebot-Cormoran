@@ -1,9 +1,11 @@
-#gère le controle du turtlebot
+# Ce programme gère le controle du turtlebot
 
 import tkinter as tk
 
 class CommandFrame(tk.Frame):
-    def __init__(self, parent, robot_controller): #met en place les différents boutons et sliders de commande
+
+    def __init__(self, parent, robot_controller):                                                       # Met en place les différents boutons et sliders de commande
+        
         super().__init__(parent)
         self.robot_controller = robot_controller
         
@@ -31,18 +33,22 @@ class CommandFrame(tk.Frame):
         self.angular_speed_slider = tk.Scale(self, from_=0, to=1, resolution=0.01, orient=tk.HORIZONTAL)
         self.angular_speed_slider.pack(fill=tk.X)
         
+        # Déplacement en avant
     def move_forward(self):
         linear_speed = self.linear_speed_slider.get()
         self.robot_controller.move(linear_speed, 0, 1)
         
+        # Déplacement vers l'arrière
     def move_backward(self):
         linear_speed = -self.linear_speed_slider.get()
         self.robot_controller.move(linear_speed, 0, 1)
         
+        # Déplacement vers la Gauche
     def move_left(self):
         angular_speed = self.angular_speed_slider.get()
         self.robot_controller.move(0, angular_speed, 1)
         
+        # Déplacement vers la Droite
     def move_right(self):
         angular_speed = -self.angular_speed_slider.get()
         self.robot_controller.move(0, angular_speed, 1)

@@ -1,5 +1,3 @@
-
-#code permettant d'installer les packages nécessaires au bon fonctionnement de l'app
 from setuptools import setup, find_packages
 
 setup(

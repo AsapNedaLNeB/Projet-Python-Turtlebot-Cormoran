@@ -1,0 +1,13 @@
+Pour que le programme fonctionne vous devez avoir installer les librairies suivantes : 
+
+-ros-melodic-rospy 
+-ros-melodic-geometry_msgs
+-tkinder
+-matplotlib
+-nav_msgs
+-time
+-os
+-subprocess
+-numpy
+-pytest
+-unittest (pour Magickmock)
