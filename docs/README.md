@@ -35,6 +35,7 @@ Contrôle du déplacement avec z,q,s,d ou les boutons du GUI (vitesse de déplac
 La fenêtre du GUI ne doit PAS être en arrière plan
 
 NB: De gros lags sont présents sur le GUI qui ont de gros impacts sur la simulation, source inconnue
+
 NB2 : sur certains PC les sliders et boutons ne fonctionnent pas : source inconnue 
 
 ## Requirements
@@ -52,7 +53,7 @@ avoir executé dans le terminal (pour ubuntu):
 
 - `$ sudo apt-get install ros-melodic-rospy`
 
-Voir `setup.py` ou `pyproject.toml` pour les packages necessaires, sinon faire `pip install -e .` dans la console python
+Voir `setup.py` ou `pyproject.toml` pour les packages necessaires (leur liste est présente dans requirements.txt), sinon faire `pip install -e .` dans la console python
 
 ## Liens
 Github : https://github.com/AsapNedaLNeB/Projet-Python-Turtlebot-Cormoran

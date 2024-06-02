@@ -9,3 +9,5 @@ Pour que le programme fonctionne vous devez avoir installer les librairies suiva
 -os
 -subprocess
 -numpy
+-pytest
+-unittest (pour Magickmock)
