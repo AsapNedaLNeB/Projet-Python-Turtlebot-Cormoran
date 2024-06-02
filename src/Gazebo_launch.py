@@ -1,6 +1,6 @@
 #lance gazebo automatiquement
 
-import subprocess
+import subprocess # librairie permettant d'ouvrir plusieurs terminaux en même temps 
 import time
 import os
 
