@@ -1,6 +1,6 @@
 ## Projet-Python-Turtlebot-Cormoran
 
-repo github du code du projet python Turtlebot3 groupe Cormoran
+github du code du projet python Turtlebot3 groupe Cormoran
 
 Lien : https://github.com/AsapNedaLNeB/Projet-Python-Turtlebot-Cormoran
 
@@ -15,10 +15,10 @@ Vlad Tondeur
 Nicolas Notter
 
 ## Description
-Une application Python avec interface graphique pour contrôler un robot TurtleBot sur gazebo. L'application permet de simuler le robot, visualiser ses mouvements, et commander ses déplacements.
+Une application Python avec interface graphique pour contrôler un robot TurtleBot sur Gazebo. L'application permet de simuler le robot, visualiser ses mouvements, et commander ses déplacements.
 
 ## Structure
-- `main.py`
+- `main.py` : programme principal faisant appel aux programmes suivant 
 - `movement_frame.py`: Affichage des mouvements du robot.
 - `command_frame.py`: Commandes pour déplacer le robot.
 - `robot_controller.py`: Interface gazebo pour contrôler le robot.
@@ -26,7 +26,7 @@ Une application Python avec interface graphique pour contrôler un robot TurtleB
 
 ## Exécution
 
-1. Exécutez l'application python : main.py
+1. Exécutez l'application python : main.py ( une fois les packages nécessaires installées --> voir le ##requirements) 
 
 ## Utilisation
 
@@ -35,6 +35,7 @@ Contrôle du déplacement avec z,q,s,d ou les boutons du GUI (vitesse de déplac
 La fenêtre du GUI ne doit PAS être en arrière plan
 
 NB: De gros lags sont présents sur le GUI qui ont de gros impacts sur la simulation, source inconnue
+NB2 : sur certains PC les sliders et boutons ne fonctionnent pas : source inconnue 
 
 ## Requirements
 Utiliser sur Ubuntu
