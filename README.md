@@ -18,7 +18,7 @@ Nicolas Notter
 Une application Python avec interface graphique pour contrôler un robot TurtleBot sur Gazebo. L'application permet de simuler le robot, visualiser ses mouvements, et commander ses déplacements.
 
 ## Structure
-- `main.py` : programme principale faisant appel aux programmes suivant 
+- `main.py` : programme principal faisant appel aux programmes suivant 
 - `movement_frame.py`: Affichage des mouvements du robot.
 - `command_frame.py`: Commandes pour déplacer le robot.
 - `robot_controller.py`: Interface gazebo pour contrôler le robot.
